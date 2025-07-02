@@ -1,35 +1,35 @@
-import type { MouseEventHandler } from "react";
-import { SIZES, VARIANTS, type TButtonProps } from "../../types/buttonTypes";
+import type { PropsWithChildren, MouseEventHandler } from "react";
+import type { TButtonProps } from "./types";
 import styles from './Button.module.css';
 
-const Button = (props: TButtonProps) => {
+export const Button = (props: PropsWithChildren<TButtonProps>) => {
   const {
-    disabled,
+    children,
+    size = 'medium',
+    variant = 'primary',
     onClick,
-    size = SIZES.MEDIUM,
-    variant = VARIANTS.PRIMARY,
+    isDisabled,
     ...restProps
   } = props;
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
-    if (disabled) return;
-    if (onClick) onClick(e);
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (evt) => {
+    if (isDisabled) return;
+    if (onClick) onClick(evt);
   }
 
   return (
     <button
-      disabled={disabled}
+      disabled={isDisabled}
       onClick={handleClick}
       className={`
         ${styles.button}
         ${styles[`button-${size}`]}
         ${styles[`button-${variant}`]}
+        ${isDisabled ? styles['button-disabled'] : ''}
       `}
       {...restProps}
     >
-      button
+      {children}
     </button>
   )
 }
-
-export default Button;

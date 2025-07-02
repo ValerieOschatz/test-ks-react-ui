@@ -1,0 +1,47 @@
+.button {
+  --primary: #6fbcff;
+  --success: #91f391;
+  --error: #ff8a86;
+  --gray: rgb(228, 228, 228);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity .6s ease-out;
+}
+
+.button:hover {
+  opacity: .6;
+}
+
+.button-small {
+  padding: 4px 20px;
+  font-size: 10px;
+}
+
+.button-medium {
+  padding: 8px 30px;
+  font-size: 12px;
+}
+
+.button-large {
+  padding: 12px 40px;
+  font-size: 14px;
+}
+
+.button-primary {
+  background-color: var(--primary);
+}
+
+.button-success {
+  background-color: var(--success);
+}
+
+.button-error {
+  background-color: var(--error);
+}
+
+.button-disabled {
+  background-color: var(--gray);
+  pointer-events: none;
+}

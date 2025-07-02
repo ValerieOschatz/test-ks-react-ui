@@ -19,6 +19,7 @@ export const Button = (props: PropsWithChildren<TButtonProps>) => {
 
   return (
     <button
+      data-testid="button"
       disabled={isDisabled}
       onClick={handleClick}
       className={`

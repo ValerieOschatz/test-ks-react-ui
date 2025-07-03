@@ -1,0 +1,16 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './Button.stories.ts';
+ 
+<Meta of={ButtonStories} />
+ 
+# Button
+ 
+Button component.
+
+Has props:
+- size - text value - size of button: small, medium, large. Default - medium.
+- variant - text value - color of button: primary, success, error. Default: primary.
+- onClick - function - implements onClick event listener.
+- isDisabled - boolean - implements attribute "disabled".
+ 
+<Canvas of={ButtonStories.Simple} />
